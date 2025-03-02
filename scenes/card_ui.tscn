@@ -31,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.223529, 0.176471, 0.0627451, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -59,7 +60,6 @@ init_state = NodePath("Base")
 
 [node name="Base" type="Node" parent="CardStateManager"]
 script = ExtResource("4_cia6b")
-state = null
 
 [node name="Clicked" type="Node" parent="CardStateManager"]
 script = ExtResource("5_rspw6")
@@ -73,4 +73,7 @@ state = 2
 script = ExtResource("7_6v64f")
 state = 4
 
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="gui_input" from="Label" to="." method="_on_label_gui_input"]
