@@ -1,5 +1,8 @@
 extends CardState
 
+const DRAG_THRESHOLD := 0.05
+var is_drag_confirmed := false
+
 func enter() -> void:
 	var ui_layer := get_tree().get_first_node_in_group("ui_layer")
 	if ui_layer:
@@ -7,6 +10,11 @@ func enter() -> void:
 
 	card_ui.color_rect.color = Color.BLUE_VIOLET
 	card_ui.card_label.text = "DRAGGING STATE"
+	
+	# handle input
+	is_drag_confirmed = false
+	var drag_timer := get_tree().create_timer(DRAG_THRESHOLD, false)
+	drag_timer.timeout.connect(func(): is_drag_confirmed = true)
 
 func on_input(_evnt: InputEvent) -> void:
 	var mouse_motion := _evnt is InputEventMouseMotion
@@ -17,8 +25,8 @@ func on_input(_evnt: InputEvent) -> void:
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset
 
 	if cancel:
-		state_changed.emit(self, CardState.State.IDLE)
-	elif confirm:
+		on_state_change.emit(self, CardState.State.IDLE)
+	elif confirm and is_drag_confirmed:
 		get_viewport().set_input_as_handled()
 		# prevent select instantly after dropping
-		state_changed.emit(self, CardState.State.RELEASED)
+		on_state_change.emit(self, CardState.State.RELEASED)

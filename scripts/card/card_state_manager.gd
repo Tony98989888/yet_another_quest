@@ -11,7 +11,7 @@ func init(card : CardUI) -> void:
 	for child in self.get_children():
 		if child is CardState:
 			available_states[child.state] = child
-			child.state_changed.connect(_on_card_state_change)
+			child.on_state_change.connect(_on_card_state_change)
 			child.card_ui = card
 	
 	if init_state:

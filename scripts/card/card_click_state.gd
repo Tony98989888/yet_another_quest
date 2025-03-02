@@ -9,4 +9,4 @@ func enter() -> void:
 
 func on_gui_input(_evnt: InputEvent) -> void:
 	if _evnt is InputEventMouseMotion:
-		state_changed.emit(self, CardState.State.DRAGGING)
+		on_state_change.emit(self, CardState.State.DRAGGING)

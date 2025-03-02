@@ -77,3 +77,5 @@ state = 4
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="gui_input" from="Label" to="." method="_on_label_gui_input"]
+[connection signal="area_entered" from="CollisionDetector" to="." method="_on_collision_detector_area_entered"]
+[connection signal="area_exited" from="CollisionDetector" to="." method="_on_collision_detector_area_exited"]

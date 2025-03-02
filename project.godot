@@ -30,7 +30,7 @@ right_mouse={
 [layer_names]
 
 2d_physics/layer_1="1"
-2d_physics/layer_2="card"
+2d_physics/layer_2="game_board_layer"
 
 [rendering]
 

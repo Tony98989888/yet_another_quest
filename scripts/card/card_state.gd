@@ -10,7 +10,7 @@ enum State {
 }
 
 
-signal state_changed(previous_state: CardState, new_state: State)
+signal on_state_change(previous_state: CardState, new_state: State)
 
 @export var state: State
 
