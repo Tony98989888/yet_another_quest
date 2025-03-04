@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://8pcaaq7ke4mc"]
+
+[ext_resource type="PackedScene" uid="uid://d3cnve1tfci83" path="res://scenes/selector_arrow.tscn" id="1_57moh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4lj6"]
+
+[node name="CardTargetSelector" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_p4lj6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="SelectorArrow" parent="." instance=ExtResource("1_57moh")]

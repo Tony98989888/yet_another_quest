@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3cnve1tfci83"]
+
+[sub_resource type="Curve" id="Curve_11kn2"]
+_data = [Vector2(0.00740741, 0.0933082), 0.0, 0.0, 0, 0, Vector2(0.71358, 0.981621), 0.0, 0.0, 0, 0, Vector2(0.992593, 0.0994345), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="SelectorArrow" type="Line2D"]
+width = 5.0
+width_curve = SubResource("Curve_11kn2")

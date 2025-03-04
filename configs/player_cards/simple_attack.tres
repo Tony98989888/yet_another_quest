@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardConfig" load_steps=2 format=3 uid="uid://dm6awwvl2fn41"]
+
+[ext_resource type="Script" path="res://scripts/configs/card_config.gd" id="1_0wss6"]
+
+[resource]
+script = ExtResource("1_0wss6")
+id = "simple_attack"
+card_type = 0
+target_type = 1

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardConfig" load_steps=2 format=3 uid="uid://cbb5ihhxapba5"]
+
+[ext_resource type="Script" path="res://scripts/configs/card_config.gd" id="1_ah4p0"]
+
+[resource]
+script = ExtResource("1_ah4p0")
+id = "simple_block"
+card_type = 1
+target_type = 0
