@@ -18,7 +18,7 @@ func _ready():
 
 func _input(_evnt: InputEvent) -> void:
 	card_state_machine.on_input(_evnt)
-	
+
 func _on_gui_input(event: InputEvent) -> void:
 	card_state_machine.on_gui_input(event)
 
