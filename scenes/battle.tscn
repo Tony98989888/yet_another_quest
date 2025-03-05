@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://7dpre16nya01"]
+[gd_scene load_steps=10 format=3 uid="uid://7dpre16nya01"]
 
 [ext_resource type="Texture2D" uid="uid://bv7gvha3crpbn" path="res://art/Backgrounds/backgroundColorFall.png" id="1_063j1"]
 [ext_resource type="PackedScene" uid="uid://8pcaaq7ke4mc" path="res://scenes/card_target_selector.tscn" id="2_5r2lp"]
 [ext_resource type="Script" path="res://scripts/card/card_board.gd" id="2_lofjd"]
 [ext_resource type="PackedScene" uid="uid://b1rbviw0jh8l6" path="res://scenes/card_ui.tscn" id="2_sie6f"]
 [ext_resource type="Texture2D" uid="uid://5ljnkwqgnwo7" path="res://icon.svg" id="3_6pggn"]
+[ext_resource type="Resource" uid="uid://dm6awwvl2fn41" path="res://configs/player_cards/simple_attack.tres" id="5_yfwoc"]
+[ext_resource type="Resource" uid="uid://cbb5ihhxapba5" path="res://configs/player_cards/simple_block.tres" id="6_wrwte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2g30"]
 size = Vector2(1152, 400)
@@ -49,12 +51,15 @@ script = ExtResource("2_lofjd")
 
 [node name="CardUI" parent="BattleUI/CardBoard" instance=ExtResource("2_sie6f")]
 layout_mode = 2
+config = ExtResource("5_yfwoc")
 
 [node name="CardUI2" parent="BattleUI/CardBoard" instance=ExtResource("2_sie6f")]
 layout_mode = 2
+config = ExtResource("5_yfwoc")
 
 [node name="CardUI3" parent="BattleUI/CardBoard" instance=ExtResource("2_sie6f")]
 layout_mode = 2
+config = ExtResource("6_wrwte")
 
 [node name="Enemy" type="Area2D" parent="."]
 position = Vector2(968, 256)

@@ -13,6 +13,9 @@ signal on_card_reloacte(card: CardUI)
 @onready var card_state_machine: CardStateManager = $CardStateManager as CardStateManager
 @onready var collide_objects: Array[Node] = []
 
+var parent: Control
+var tween: Tween
+
 func _ready():
 	card_state_machine.init(self)
 
@@ -36,3 +39,7 @@ func _on_collision_detector_area_entered(area: Area2D) -> void:
 
 func _on_collision_detector_area_exited(area: Area2D) -> void:
 	collide_objects.erase(area)
+
+func animate_to_position(position: Vector2, duration: float) -> void:
+	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_position", position, duration)

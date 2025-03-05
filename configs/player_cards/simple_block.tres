@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/configs/card_config.gd" id="1_ah4p0"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_ah4p0")
 id = "simple_block"
 card_type = 1

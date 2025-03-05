@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1rbviw0jh8l6"]
+[gd_scene load_steps=10 format=3 uid="uid://b1rbviw0jh8l6"]
 
 [ext_resource type="Theme" uid="uid://d27b5waosu8f5" path="res://themes/game_theme.tres" id="1_0oupe"]
 [ext_resource type="Script" path="res://scripts/card/card_ui.gd" id="2_es4he"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/card/card_click_state.gd" id="5_rspw6"]
 [ext_resource type="Script" path="res://scripts/card/card_drag_state.gd" id="6_c6ps2"]
 [ext_resource type="Script" path="res://scripts/card/card_release_state.gd" id="7_6v64f"]
+[ext_resource type="Script" path="res://scripts/card/card_aiming_state.gd" id="8_4cnco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrkv6"]
 size = Vector2(64, 96)
@@ -68,6 +69,10 @@ state = 1
 [node name="Dragging" type="Node" parent="CardStateManager"]
 script = ExtResource("6_c6ps2")
 state = 2
+
+[node name="Aiming" type="Node" parent="CardStateManager"]
+script = ExtResource("8_4cnco")
+state = 3
 
 [node name="Released" type="Node" parent="CardStateManager"]
 script = ExtResource("7_6v64f")

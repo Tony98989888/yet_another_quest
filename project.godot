@@ -14,6 +14,10 @@ config/name="SimpleQuest2.0"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*res://scripts/events/event.gd"
+
 [input]
 
 left_mouse={
