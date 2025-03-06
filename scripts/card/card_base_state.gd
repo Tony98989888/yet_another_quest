@@ -5,6 +5,9 @@ func enter() -> void:
 	if not card_ui.is_node_ready():
 		await card_ui.ready
 
+	if card_ui.tween and card_ui.tween.is_running():
+		card_ui.tween.kill()
+
 	card_ui.on_card_reloacte.emit(card_ui)
 	card_ui.color_rect.color = Color.GREEN
 	card_ui.card_label.text = "BASE STATE"
