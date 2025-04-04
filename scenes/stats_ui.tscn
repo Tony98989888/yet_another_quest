@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkcj37x41vxw6"]
+
+[ext_resource type="Texture2D" uid="uid://c42l8y4e0dwq4" path="res://art/Icons/PNG/Default (64px)/shield.png" id="1_pqsn1"]
+[ext_resource type="Script" path="res://scripts/ui/stats_ui.gd" id="1_tewpd"]
+[ext_resource type="Theme" uid="uid://d27b5waosu8f5" path="res://themes/game_theme.tres" id="2_i2boa"]
+[ext_resource type="Texture2D" uid="uid://c0hnvohxhpkqj" path="res://art/Icons/PNG/Default (64px)/suit_hearts.png" id="3_ihleg"]
+
+[node name="StatsUI" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_right = 137.0
+offset_bottom = 64.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_tewpd")
+
+[node name="Shield" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="Shield"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_pqsn1")
+stretch_mode = 5
+
+[node name="ShieldLabel" type="Label" parent="Shield"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_i2boa")
+theme_override_font_sizes/font_size = 40
+text = "99"
+
+[node name="Hp" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Hp"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("3_ihleg")
+stretch_mode = 5
+
+[node name="HpLabel" type="Label" parent="Hp"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_i2boa")
+theme_override_font_sizes/font_size = 40
+text = "99"
